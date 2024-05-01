@@ -18,6 +18,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
@@ -27,12 +28,14 @@ public class User {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
-    @NotEmpty
+    @NotEmpty(message= "Must enter a username!")
     private String username;
-    @NotEmpty
+    @NotEmpty(message = "Must enter a password!")
+    @Size(min=8, message = "Password must be 8 characters.")
     private String password;
     @Transient
-    @NotEmpty
+    @NotEmpty(message ="Confirm cannot be blank!")
+    @Size(min=8, message = "Confirm must be 8 characters.")
     private String passwordConfirmation;
     private Date createdAt;
     private Date updatedAt;

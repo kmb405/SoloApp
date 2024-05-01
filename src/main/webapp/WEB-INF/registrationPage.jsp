@@ -32,23 +32,21 @@
 			     </div>
 			     <div class="px-5 m-5">     
 			     	<h2>Register</h2>
-    
-			    	<p><form:errors path="user.*"/></p>
 			    
 				    <form:form class="form" method="POST" action="/register" modelAttribute="user">
 				        <h5 class="p-3">
-				            <form:label class="p-2" path="username">Username:</form:label>
-				            <form:errors path="username"/>
+				            <form:label class="p-2" path="username">Username:</form:label><br/>
+				            <form:errors path="username" class="text-danger"/>
 				            <form:input class="form-control" path="username"/>
 				        </h5>
 				        <h5 class="p-3">
-				            <form:label class="p-2" path="password">Password:</form:label>
-				            <form:errors path="password"/>
+				            <form:label class="p-2" path="password">Password:</form:label><br/>
+				            <form:errors path="password" class="text-danger"/>
 				            <form:password class="form-control" path="password"/>
 				        </h5>
 				        <h5 class="p-3">
-				            <form:label class="p-2" path="passwordConfirmation">Password Confirmation:</form:label>
-				            <form:errors path="passwordConfirmation"/>
+				            <form:label class="p-2" path="passwordConfirmation">Password Confirmation:</form:label><br/>
+				            <form:errors path="passwordConfirmation" class="text-danger"/>
 				            <form:password class="form-control" path="passwordConfirmation"/>
 				        </h5>
 				        <input class="my-5 btn btn-danger form-control" type="submit" value="Register!"/>

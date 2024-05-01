@@ -75,9 +75,9 @@ public class TaskController {
     }
 	
 	@GetMapping("/deleteTask/{taskId}")
-	public String deleteTask(@PathVariable("taskId") Long taskId) {
+	public String deleteTask(@PathVariable("taskId") Long taskId, HttpSession session) {
 		taskServ.deleteTask(taskId);
-		return "redirect:/tasks";
+		return "redirect:/tasks/"+formattedDate+"/"+ session.getAttribute("userId") ;
 	}
 	
 	@PostMapping("/createTask")
